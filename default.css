@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, strong{
 	font-weight: 500;
 }
 
-p, li, span, label, input, textarea, a{
+p, li, span, label, input, textarea, a, button{
 	color: var(--secondaryText);
 	font-family: 'Roboto Mono', monospace;
 }
@@ -79,10 +79,17 @@ h6 { font-size: 16px;}
   border-right: .25em solid var(--borderColor); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: .15em;
   animation: 
     typing 2.5s steps(22, end),
-    blink-caret .75s step-end infinite;
+	blink-caret .75s step-end infinite;
+}
+
+.simple-heading {
+	cursor: pointer;
+	margin: 0 auto;
+	letter-spacing: .15em;
+	font-size: 2.5rem;
 }
 
 /* The typing effect */
@@ -414,7 +421,7 @@ h6 { font-size: 16px;}
 	color: var(--mainText)
 }
 
-.game-section{
+#game-section{
 	padding: 1rem 0 3rem 0;
 	contain: content;
 	max-height: 2.5rem;
@@ -423,7 +430,7 @@ h6 { font-size: 16px;}
 }
 
 #game-close-div{
-	margin-top: 1.3rem;
+	margin-top: 1.4rem;
 }
 
 @keyframes section-slide-open{
