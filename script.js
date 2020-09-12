@@ -1,50 +1,74 @@
 let theme = localStorage.getItem('theme')
 
-if(theme == null){
+if (theme == null) {
 	setTheme('blue')
-}else{
+} else {
 	setTheme(theme)
 }
 
 let themeDots = document.getElementsByClassName('theme-dot')
 
+function detectMob() {
+	const toMatch = [
+		/Android/i,
+		/webOS/i,
+		/iPhone/i,
+		/iPad/i,
+		/iPod/i,
+		/BlackBerry/i,
+		/Windows Phone/i
+	];
 
-for (var i=0; themeDots.length > i; i++){
-	themeDots[i].addEventListener('click', function(){
+	return toMatch.some((toMatchItem) => {
+		return navigator.userAgent.match(toMatchItem);
+	});
+}
+
+for (var i = 0; themeDots.length > i; i++) {
+	themeDots[i].addEventListener('click', function () {
 		let mode = this.dataset.mode
 		setTheme(mode)
 	})
 }
 
-document.getElementsByClassName('main-heading')[0].addEventListener('click', function() {
-	var ele = document.getElementsByClassName('main-heading')[0]
-	ele.classList.remove('main-heading')
-	setTimeout(function () {
-		ele.classList.add('main-heading')
-	}, 0)
-})
+var mainHeading = document.getElementsByClassName('main-heading')[0]
+if (window.innerWidth < 850) {
+	mainHeading.classList.remove('main-heading')
+	mainHeading.classList.add('simple-heading')
+} else {
+	mainHeading.addEventListener('click', function () {
+		mainHeading.classList.remove('main-heading')
+		setTimeout(function () {
+			mainHeading.classList.add('main-heading')
+		}, 0)
+	})
+}
 
-function setTheme(mode){
-	if(mode == 'light'){
+if (detectMob()) {
+	document.getElementById('game-section').style.display = 'none'
+}
+
+function setTheme(mode) {
+	if (mode == 'light') {
 		document.getElementById('theme-style').href = 'default.css'
 	}
 
-	if(mode == 'blue'){
+	if (mode == 'blue') {
 		document.getElementById('theme-style').href = 'blue.css'
 	}
 
-	if(mode == 'green'){
+	if (mode == 'green') {
 		document.getElementById('theme-style').href = 'green.css'
 	}
 
-	if(mode == 'purple'){
+	if (mode == 'purple') {
 		document.getElementById('theme-style').href = 'purple.css'
 	}
 
 	localStorage.setItem('theme', mode)
 }
 var isOpenGameSecion = false
-var gameSection = document.getElementsByClassName('game-section')[0]
+var gameSection = document.getElementById('game-section')
 var gameCloseDiv = document.getElementById('game-close-div')
 if (gameCloseDiv) {
 	gameSection.addEventListener('click', ((evt) => {
