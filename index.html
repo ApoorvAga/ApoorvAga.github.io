@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177864153-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-177864153-1');
+	</script>
+
+
 	<title>Apoorv Agarwal</title>
-
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
@@ -157,7 +165,7 @@
 						<img class="thumbnail" src="images/timeline3.png">
 						<div class="post-preview">
 							<h6 class="post-title">Timeline Component</h6>
-							<p class="post-intro">Built REST APIs for timline component, recording every action performed on website</p>
+							<p class="post-intro">Built REST APIs for timeline component, recording every major action performed on website</p>
 						</div>
 					</div>
 				</div>
@@ -188,7 +196,7 @@
 		</div>
 	</section>
 
-	<section class="s1 game-section">
+	<section id="game-section" class="s2">
 		<div style="text-align: center; margin-top: 0rem;">
 			<h3 id="game-close-div">Click To Play Snake!</h3>
 			<h3 id="score">Score: 0</h3>
@@ -216,30 +224,31 @@
 		</div>
 	</section>
 
-	<section class="s2">
+	<section class="s1">
 		<div class="main-container">
 			<a href=""></a>
 			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form id="contact-form">
+			<form id="contact-form" action="https://formspree.io/xyybgywk" method="POST">
 				<a name="contact"></a>
 
 				<label>Name</label>
-				<input class="input-field" type="text" name="name">
+				<input class="input-field" type="text" name="name" required>
 
 				<label>Subject</label>
-				<input class="input-field" type="text" name="subject">
+				<input class="input-field" type="text" name="_subject">
 
 				<label>Email</label>
-				<input class="input-field" type="text" name="email">
+				<input class="input-field" type="email" name="_replyto" required>
 
 				<label>Message</label>
 				<textarea class="input-field" name="message"></textarea>
 
-				<input id="submit-btn" type="submit" value="Send">
+				<button id="submit-btn" type="submit">Submit</button>
 			</form>
 		</div>
-	</section> 
+		<p id="settings-note">*Open in desktop for additional features</p>
+	</section>
 
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="SnakeGame/brick.js"></script>
