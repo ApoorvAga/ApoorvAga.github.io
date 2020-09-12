@@ -53,7 +53,12 @@
             </div>
 
             <p>
-                Timeline Component keeps track of all the actions performed on the website by the user in a clean and systamtic way.
+                Timeline Component keeps track of all the actions performed on the website by the user in a clean and systematic way.
+                <br><br>
+                Whenever an action is performed on the website, the timeline service is called which saves
+                the resource and the difference between the data to the db.
+                <br>
+                In addition to the common Timeline Component, each major resource on the website has it's own Timeline Component.
             </p>
 
             <h5>Technologies:</h5>
@@ -64,7 +69,6 @@
                     <li>- RabbitMQ</li>
                 </ul>
                 <ul>
-                    
                     <li>- Vue.js</li>
                     <li>- Javascript</li>
                     <li>- HTML/CSS</li>
@@ -76,13 +80,13 @@
                 <img src="images/timeline2.png">
             </div>
             <p>
-                Sub-Menus was the most challenging part of the project.
+                User can view more details by clicking of a specific timeline event.
+                It contains the details of the action performed, the resource and many more.
                 <br><br>
-                I had to make sure the component would behave unexpectedly as the component had several sub-menus which
-                could have lots of data.
-                <br><br>
-                The submenu also supported multiselect resources, like linking labels, assigning users etc and not just
-                simple buttons.
+                The most challenging part was creating timeline events for <span class="important-text">json fields.</span>
+                <br>
+                Json fields could contain any type of fields like list, test, date, numbers, array or an array of json fields.
+                For this the details view shows a table with the field name, old value and new value.
             </p>
             <br><br><br>
         </div>
