@@ -63,6 +63,7 @@ function startGame(difficulty, bricksNumber) {
 
 
 window.addEventListener('keydown', ((evt) => {
+    if (firstPaused) { return }
     if ((evt.key.indexOf('Arrow') != -1 || evt.key == ' ') && isInViewport(canvas)) {
         evt.preventDefault()
     }
