@@ -46,6 +46,9 @@ if (window.innerWidth < 850) {
 
 if (detectMob()) {
 	document.getElementById('game-section').style.display = 'none'
+	document.getElementById('form-section').classList.remove('s1')
+	document.getElementById('form-section').classList.add('s2')
+	document.getElementById('mobile-text').style.display = 'block'
 }
 
 function setTheme(mode) {
